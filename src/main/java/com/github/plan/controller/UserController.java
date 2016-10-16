@@ -1,7 +1,7 @@
 package com.github.plan.controller;
 
 import com.github.plan.persistance.client.dao.User;
-import com.github.plan.persistance.client.dao.UserDao;
+import com.github.plan.persistance.client.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,22 +16,22 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    UserRepository userRepository;
 
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     public List<User> getUsers() {
-        return (List<User>) userDao.findAll();
+        return (List<User>) userRepository.findAll();
     }
 
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveUser(@RequestBody User user) {
-        userDao.save(user);
+        userRepository.save(user);
         return new ResponseEntity<String>(HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/user/remove", method = RequestMethod.POST)
     public ResponseEntity<String> removeUser(@RequestBody Long userId) {
-        userDao.delete(userId);
+        userRepository.delete(userId);
         return new ResponseEntity<String>(HttpStatus.OK);
     }
 }

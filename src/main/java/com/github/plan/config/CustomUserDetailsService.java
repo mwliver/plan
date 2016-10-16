@@ -1,7 +1,7 @@
 package com.github.plan.config;
 
 import com.github.plan.persistance.client.dao.User;
-import com.github.plan.persistance.client.dao.UserDao;
+import com.github.plan.persistance.client.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
@@ -19,17 +19,17 @@ import java.util.Collection;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserDao userDao;
+    private UserRepository userRepository;
 
     @Autowired
-    public CustomUserDetailsService(UserDao userDao) {
-        this.userDao = userDao;
+    public CustomUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        Iterable<User> all = userDao.findAll();
+        Iterable<User> all = userRepository.findAll();
         while (all.iterator().hasNext()) {
             User next = all.iterator().next();
             if (next.getLogin().equals(username)) {
