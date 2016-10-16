@@ -1,4 +1,4 @@
-package com.github.plan.persistance.client.dao;
+package com.github.plan.persistence.client.dao;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

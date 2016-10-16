@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.github.plan.persistance")
+@EnableJpaRepositories("com.github.plan.persistence")
 public class PersistenceJpaConfig {
 
     @Bean
@@ -26,7 +26,7 @@ public class PersistenceJpaConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com.github.plan.persistance");
+        factory.setPackagesToScan("com.github.plan.persistence");
         factory.setDataSource(dataSource());
         factory.setJpaProperties(additionalProperties());
         factory.afterPropertiesSet();

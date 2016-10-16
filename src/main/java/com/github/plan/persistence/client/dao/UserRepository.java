@@ -1,4 +1,4 @@
-package com.github.plan.persistance.client.dao;
+package com.github.plan.persistence.client.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
