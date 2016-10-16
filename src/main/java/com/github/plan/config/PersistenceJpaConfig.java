@@ -37,10 +37,10 @@ public class PersistenceJpaConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost/studia");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("postgres");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/zpp");
+        dataSource.setUsername("root");
+        dataSource.setPassword("");
         return dataSource;
     }
 
@@ -60,8 +60,9 @@ public class PersistenceJpaConfig {
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("javax.persistence.jdbc.show_sql", "true");
         properties.setProperty("hibernate.dialect",
-                "org.hibernate.dialect.PostgreSQL82Dialect");
+                "org.hibernate.dialect.MySQLDialect");
         properties.setProperty("hibernate.format_sql", "true");
         return properties;
     }

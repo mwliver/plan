@@ -1,0 +1,10 @@
+-- Tworzenie bazy
+create table users (
+id bigint not null,
+login varchar(255),
+name varchar(255),
+password varchar(255)
+);
+
+-- Nowy użytkownik
+insert into users (id, login, name, password) values (null, 'foo', 'foo', 'foo');
