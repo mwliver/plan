@@ -1,4 +1,4 @@
-package com.github.plan.config;
+package main.java.com.github.plan.config;
 
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
 

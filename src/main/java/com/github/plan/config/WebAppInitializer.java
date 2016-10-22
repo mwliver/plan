@@ -1,4 +1,4 @@
-package com.github.plan.config;
+package main.java.com.github.plan.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

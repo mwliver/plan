@@ -1,7 +1,7 @@
-package com.github.plan.controller;
+package main.java.com.github.plan.controller;
 
-import com.github.plan.persistence.client.dao.User;
-import com.github.plan.persistence.client.dao.UserRepository;
+import main.java.com.github.plan.persistence.client.dao.User;
+import main.java.com.github.plan.persistence.client.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
