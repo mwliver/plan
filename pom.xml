@@ -153,11 +153,11 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.6.v20151106</version>
-                <configuration>
-                    <httpConnector>
-                        <port>9090</port>
-                    </httpConnector>
-                </configuration>
+                <!--<configuration>-->
+                    <!--<httpConnector>-->
+                        <!--<port>9090</port>-->
+                    <!--</httpConnector>-->
+                <!--</configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
