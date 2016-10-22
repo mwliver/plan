@@ -20,15 +20,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     {
         final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         final ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         converter.setObjectMapper(objectMapper);
         converters.add(converter);
         super.configureMessageConverters(converters);
     }
-
-//    @Bean
-//    public UserController userController() {
-//        return new UserController();
-//    }
-
 }

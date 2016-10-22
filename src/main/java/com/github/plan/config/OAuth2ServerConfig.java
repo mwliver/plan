@@ -40,10 +40,6 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            // http.requestMatchers().antMatchers("/resources/**").and()
-            // .authorizeRequests().anyRequest()
-            // .access("#oauth2.hasScope('read')");
-
             http.authorizeRequests().anyRequest().permitAll();
         }
     }
@@ -93,23 +89,4 @@ public class OAuth2ServerConfig {
                     .accessTokenValiditySeconds(3600);
         }
     }
-//	@Configuration
-//	@Order(Ordered.LOWEST_PRECEDENCE - 20)
-//	protected static class AuthenticationManagerConfiguration extends
-//			GlobalAuthenticationConfigurerAdapter {
-//		@Autowired
-//		private DataSource dataSource;
-//
-//		@Autowired
-//		private CustomUserDetailsService userDetailsService;
-//
-//		@Override
-//		public void init(AuthenticationManagerBuilder auth) throws Exception {
-//			// @formatter:off
-//			auth.jdbcAuthentication().dataSource(dataSource);
-////			.withUser("dave")
-////					.password("secret").roles("USER");
-//			// @formatter:on
-//		}
-//	}
 }
