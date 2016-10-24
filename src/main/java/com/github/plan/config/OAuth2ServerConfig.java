@@ -1,4 +1,4 @@
-package main.java.com.github.plan.config;
+package com.github.plan.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

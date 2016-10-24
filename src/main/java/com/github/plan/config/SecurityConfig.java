@@ -1,4 +1,4 @@
-package main.java.com.github.plan.config;
+package com.github.plan.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

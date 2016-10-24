@@ -1,7 +1,7 @@
-package main.java.com.github.plan.config;
+package com.github.plan.config;
 
-import main.java.com.github.plan.persistence.client.dao.User;
-import main.java.com.github.plan.persistence.client.dao.UserRepository;
+import com.github.plan.persistence.client.dao.User;
+import com.github.plan.persistence.client.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;

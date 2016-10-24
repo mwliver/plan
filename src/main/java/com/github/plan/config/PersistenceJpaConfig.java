@@ -1,4 +1,4 @@
-package main.java.com.github.plan.config;
+package com.github.plan.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -57,6 +57,7 @@ public class PersistenceJpaConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
+    @Bean
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");

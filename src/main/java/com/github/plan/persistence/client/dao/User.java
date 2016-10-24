@@ -1,4 +1,4 @@
-package main.java.com.github.plan.persistence.client.dao;
+package com.github.plan.persistence.client.dao;
 
 import javax.persistence.*;
 import java.util.ArrayList;
