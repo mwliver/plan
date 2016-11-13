@@ -7,15 +7,61 @@ import com.github.plan.persistence.client.dao.TeamRepository;
 import com.github.plan.persistence.client.dao.UserRepository;
 import com.github.plan.service.EventService;
 import com.github.plan.service.EventServiceImpl;
+import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+
+import java.util.Properties;
 
 import static org.mockito.Mockito.mock;
 
 @Configuration
 @Import({PersistenceJpaConfig.class})
 public class GenericTestConfiguration {
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+        factory.setJpaVendorAdapter(vendorAdapter);
+        factory.setPackagesToScan("com.github.plan.persistence.client.dao");
+        factory.setJpaProperties(additionalProperties());
+//        factory.setDataSource(dataSource());
+        factory.afterPropertiesSet();
+
+        return factory;
+    }
+
+    @Bean
+    public Properties additionalProperties() {
+        Properties properties = new Properties();
+
+        properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+        properties.setProperty(Environment.DRIVER, "org.h2.Driver");
+        properties.setProperty(Environment.URL, "jdbc:h2:mem:test;MODE=PostgreSQL");
+        properties.setProperty(Environment.USER, "sa");
+        properties.setProperty(Environment.PASS, "");
+        properties.setProperty(Environment.CURRENT_SESSION_CONTEXT_CLASS, "org.springframework.orm.hibernate4.SpringSessionContext");
+        properties.setProperty(Environment.SHOW_SQL, "true");
+        properties.setProperty(Environment.HBM2DDL_AUTO, "create");
+        properties.setProperty(Environment.USE_SECOND_LEVEL_CACHE, "false");
+
+        return properties;
+    }
+
+//    @Bean
+//    public DataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("org.postgresql.Driver");
+//        dataSource.setUrl("jdbc:postgresql://localhost/test");
+//        dataSource.setUsername("postgres");
+//        dataSource.setPassword("postgres");
+//        return dataSource;
+//    }
 
     @Bean
     UserRepository userRepository() {

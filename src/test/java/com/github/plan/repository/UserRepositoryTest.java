@@ -12,8 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.IOException;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {GenericTestConfiguration.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
@@ -23,7 +21,7 @@ public class UserRepositoryTest extends Assert {
     UserRepository userRepository;
 
     @Test
-    public void shouldUploadAttachment() throws IOException {
+    public void shouldAddUser() {
         // When
         User user = new User();
         user.setName("foo");

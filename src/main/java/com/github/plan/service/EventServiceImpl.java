@@ -42,9 +42,21 @@ public class EventServiceImpl implements EventService {
             return false;
         }
 
-        team = teamRepository.save(team);
-        room = roomRepository.save(room);
-        user = userRepository.save(user);
+        if (team.getId() != null) {
+            team = teamRepository.findOne(team.getId());
+        } else {
+            team = teamRepository.save(team);
+        }
+        if (room.getId() != null) {
+            room = roomRepository.findOne(room.getId());
+        } else {
+            room = roomRepository.save(room);
+        }
+        if (user.getId() != null) {
+            user = userRepository.findOne(user.getId());
+        } else {
+            user = userRepository.save(user);
+        }
 
         event.setTeam(team);
         event.setRoom(room);
