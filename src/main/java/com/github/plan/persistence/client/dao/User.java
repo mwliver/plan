@@ -16,7 +16,8 @@ public class User {
     private String name;
     private String password;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
+    @OrderColumn
     private List<Event> events = new ArrayList<Event>();
 
     public Long getId() {

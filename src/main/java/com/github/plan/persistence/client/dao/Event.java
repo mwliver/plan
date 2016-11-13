@@ -1,9 +1,6 @@
 package com.github.plan.persistence.client.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Calendar;
 
 @Entity
@@ -15,13 +12,13 @@ public class Event {
     private Calendar timeFrom;
     private Calendar timeTo;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Team team;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Room room;
 
     public Long getId() {
@@ -47,6 +44,4 @@ public class Event {
     public void setTimeTo(Calendar timeTo) {
         this.timeTo = timeTo;
     }
-
-
 }

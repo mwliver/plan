@@ -16,11 +16,11 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     public List<User> getUsers() {
-        return (List<User>) userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
