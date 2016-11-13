@@ -11,22 +11,34 @@ import java.util.List;
 public class EventServiceImpl implements EventService {
 
     @Autowired
-    EventRepository eventRepository;
+    private EventRepository eventRepository;
 
     @Autowired
-    TeamRepository teamRepository;
+    private TeamRepository teamRepository;
 
     @Autowired
-    RoomRepository roomRepository;
+    private RoomRepository roomRepository;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
     public Boolean addEvent(Event event, Team team, Room room, User user) {
-        List<Event> plannedOrOngoing = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo());
+        List<Event> plannedOrOngoingForUser = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), user);
 
-        if (!CollectionUtils.isEmpty(plannedOrOngoing)) {
+        if (!CollectionUtils.isEmpty(plannedOrOngoingForUser)) {
+            return false;
+        }
+
+        List<Event> plannedOrOngoingForRoom = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), room);
+
+        if (!CollectionUtils.isEmpty(plannedOrOngoingForRoom)) {
+            return false;
+        }
+
+        List<Event> plannedOrOngoingForTeam = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), team);
+
+        if (!CollectionUtils.isEmpty(plannedOrOngoingForTeam)) {
             return false;
         }
 
