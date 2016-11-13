@@ -35,6 +35,7 @@ public class EventServiceTest extends Assert {
 
     @Test
     public void addEvent() throws Exception {
+        // Given
         Event event = new Event();
         event.setTimeFrom(Calendar.getInstance());
         event.setTimeTo(Calendar.getInstance());
@@ -49,8 +50,10 @@ public class EventServiceTest extends Assert {
         User user = new User();
         user.setName("michal");
 
+        // When
         Boolean result = eventService.addEvent(event, team, room, user);
 
+        // Then
         assertTrue(result);
     }
 }

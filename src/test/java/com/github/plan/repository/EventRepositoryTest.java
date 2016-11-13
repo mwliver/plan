@@ -25,7 +25,7 @@ public class EventRepositoryTest extends Assert {
 
     @Test
     public void shouldAddEvent() {
-        // When
+        // Given
         Event event = new Event();
         event.setTimeFrom(Calendar.getInstance());
         event.setTimeTo(Calendar.getInstance());
@@ -37,6 +37,7 @@ public class EventRepositoryTest extends Assert {
 
     @Test
     public void findPlannedOrOngoing() throws Exception {
+        // Given
         Event firstEvent = new Event();
         firstEvent.setTimeFrom(Calendar.getInstance());
         firstEvent.setTimeTo(Calendar.getInstance());
@@ -59,8 +60,10 @@ public class EventRepositoryTest extends Assert {
         Calendar calendarTo = Calendar.getInstance();
         calendarTo.add(Calendar.YEAR, 1);
 
+        // When
         List<Event> plannedOrOngoing = eventRepository.findPlannedOrOngoing(calendarFrom, calendarTo);
 
+        // Then
         assertEquals(3, plannedOrOngoing.size());
     }
 }
