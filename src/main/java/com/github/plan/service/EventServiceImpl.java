@@ -24,24 +24,6 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Boolean addEvent(Event event, Team team, Room room, User user) {
-        List<Event> plannedOrOngoingForUser = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), user);
-
-        if (!CollectionUtils.isEmpty(plannedOrOngoingForUser)) {
-            return false;
-        }
-
-        List<Event> plannedOrOngoingForRoom = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), room);
-
-        if (!CollectionUtils.isEmpty(plannedOrOngoingForRoom)) {
-            return false;
-        }
-
-        List<Event> plannedOrOngoingForTeam = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo(), team);
-
-        if (!CollectionUtils.isEmpty(plannedOrOngoingForTeam)) {
-            return false;
-        }
-
         if (team.getId() != null) {
             team = teamRepository.findOne(team.getId());
         } else {
@@ -61,6 +43,21 @@ public class EventServiceImpl implements EventService {
         event.setTeam(team);
         event.setRoom(room);
         event.setUser(user);
+
+        List<Event> plannedOrOngoing = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo());
+
+        if (plannedOrOngoing.stream().filter(n -> n.getUser().getId().equals(user.getId())).count() > 0) {
+            return false;
+        }
+
+        if (plannedOrOngoing.stream().filter(n -> n.getRoom().getId().equals(room.getId())).count() > 0) {
+            return false;
+        }
+
+        if (plannedOrOngoing.stream().filter(n -> n.getTeam().getId().equals(team.getId())).count() > 0) {
+            return false;
+        }
+
         eventRepository.save(event);
 
         return true;
