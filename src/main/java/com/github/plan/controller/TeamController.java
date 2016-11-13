@@ -29,8 +29,8 @@ public class TeamController {
     }
 
     @RequestMapping(value = "/team/remove", method = RequestMethod.POST)
-    public ResponseEntity<String> removeTeam(@RequestBody Long groupId) {
-        teamRepository.delete(groupId);
+    public ResponseEntity<String> removeTeam(@RequestBody Long teamId) {
+        teamRepository.delete(teamId);
         return new ResponseEntity<String>(HttpStatus.OK);
     }
 }
