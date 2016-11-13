@@ -14,7 +14,7 @@ public class Room {
     private Long id;
 
     private String building;
-    private Integer number;
+    private String number;
 
     @OneToMany
     private List<Event> events = new ArrayList<Event>();
@@ -35,14 +35,6 @@ public class Room {
         this.building = building;
     }
 
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
-    }
-
     @Override
     public String toString() {
         return building + number;
@@ -50,5 +42,13 @@ public class Room {
 
     public List<Event> getEvents() {
         return events;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
     }
 }
