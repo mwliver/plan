@@ -1,5 +1,6 @@
-package com.github.plan;
+package com.github.plan.repository;
 
+import com.github.plan.base.GenericTestConfiguration;
 import com.github.plan.persistence.client.dao.User;
 import com.github.plan.persistence.client.dao.UserRepository;
 import org.junit.Assert;

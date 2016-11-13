@@ -16,8 +16,7 @@ import java.util.List;
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters)
-    {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         final MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         final ObjectMapper objectMapper = new ObjectMapper();
         converter.setObjectMapper(objectMapper);

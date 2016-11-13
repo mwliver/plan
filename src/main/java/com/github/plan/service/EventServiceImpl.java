@@ -30,15 +30,14 @@ public class EventServiceImpl implements EventService {
             return false;
         }
 
-        event = eventRepository.save(event);
+        team = teamRepository.save(team);
+        room = roomRepository.save(room);
+        user = userRepository.save(user);
 
-        team.getEvents().add(event);
-        room.getEvents().add(event);
-        user.getEvents().add(event);
-
-        teamRepository.save(team);
-        roomRepository.save(room);
-        userRepository.save(user);
+        event.setTeam(team);
+        event.setRoom(room);
+        event.setUser(user);
+        eventRepository.save(event);
 
         return true;
     }

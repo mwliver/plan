@@ -1,8 +1,9 @@
 package com.github.plan.persistence.client.dao;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "users")
 @Entity
@@ -15,10 +16,6 @@ public class User {
     private String login;
     private String name;
     private String password;
-
-    @OneToMany(fetch = FetchType.EAGER)
-    @OrderColumn
-    private List<Event> events = new ArrayList<Event>();
 
     public Long getId() {
         return id;
@@ -50,9 +47,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Event> getEvents() {
-        return events;
     }
 }

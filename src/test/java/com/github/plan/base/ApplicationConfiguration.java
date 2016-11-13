@@ -1,4 +1,4 @@
-package com.github.plan;
+package com.github.plan.base;
 
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;

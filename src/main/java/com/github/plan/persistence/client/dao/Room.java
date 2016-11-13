@@ -1,8 +1,8 @@
 package com.github.plan.persistence.client.dao;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Room {
@@ -12,10 +12,6 @@ public class Room {
 
     private String building;
     private String number;
-
-    @OneToMany(fetch = FetchType.EAGER)
-    @OrderColumn
-    private List<Event> events = new ArrayList<Event>();
 
     public Long getId() {
         return id;
@@ -36,10 +32,6 @@ public class Room {
     @Override
     public String toString() {
         return building + number;
-    }
-
-    public List<Event> getEvents() {
-        return events;
     }
 
     public void setNumber(String number) {
