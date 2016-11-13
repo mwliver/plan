@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Import;
 
 import static org.mockito.Mockito.mock;
 
-/**
- * Copyright (C) Coderion
- */
 @Configuration
 @Import({PersistenceJpaConfig.class})
 public class GenericTestConfiguration {
