@@ -6,9 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Properties;
 
-/**
- * Copyright (C) Coderion
- */
 @Configuration
 public class ApplicationConfiguration {
 

@@ -13,9 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/**
- * Copyright (C) Coderion sp. z o.o
- */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 

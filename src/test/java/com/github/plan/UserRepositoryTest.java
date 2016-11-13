@@ -13,9 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 
-/**
- * Copyright (C) Coderion
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {GenericTestConfiguration.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
