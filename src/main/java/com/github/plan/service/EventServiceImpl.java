@@ -14,7 +14,7 @@ public class EventServiceImpl implements EventService {
     EventRepository eventRepository;
 
     @Autowired
-    GroupRepository groupRepository;
+    TeamRepository teamRepository;
 
     @Autowired
     RoomRepository roomRepository;
@@ -23,7 +23,7 @@ public class EventServiceImpl implements EventService {
     UserRepository userRepository;
 
     @Override
-    public Boolean addEvent(Event event, Group group, Room room, User user) {
+    public Boolean addEvent(Event event, Team team, Room room, User user) {
         List<Event> plannedOrOngoing = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo());
 
         if (!CollectionUtils.isEmpty(plannedOrOngoing)) {
@@ -32,11 +32,11 @@ public class EventServiceImpl implements EventService {
 
         event = eventRepository.save(event);
 
-        group.getEvents().add(event);
+        team.getEvents().add(event);
         room.getEvents().add(event);
         user.getEvents().add(event);
 
-        groupRepository.save(group);
+        teamRepository.save(team);
         roomRepository.save(room);
         userRepository.save(user);
 
