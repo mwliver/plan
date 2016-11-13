@@ -1,6 +1,7 @@
 package com.github.plan.persistence.client.dao;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Calendar;
@@ -8,6 +9,7 @@ import java.util.Calendar;
 @Entity
 public class Event {
     @Id
+    @GeneratedValue
     private Long id;
 
     private Calendar timeFrom;
@@ -17,7 +19,7 @@ public class Event {
     private User user;
 
     @ManyToOne
-    private Group group;
+    private Team team;
 
     @ManyToOne
     private Room room;
