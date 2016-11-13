@@ -12,7 +12,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.github.plan.controller")
+@ComponentScan(basePackages = "com.github.plan")
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
