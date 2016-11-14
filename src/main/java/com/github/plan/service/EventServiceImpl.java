@@ -44,17 +44,21 @@ public class EventServiceImpl implements EventService {
         event.setRoom(room);
         event.setUser(user);
 
+        final Team t = team;
+        final Room r = room;
+        final User u = user;
+
         List<Event> plannedOrOngoing = eventRepository.findPlannedOrOngoing(event.getTimeFrom(), event.getTimeTo());
 
-        if (plannedOrOngoing.stream().filter(n -> n.getUser().getId().equals(user.getId())).count() > 0) {
+        if (plannedOrOngoing.stream().filter(n -> n.getUser().getId().equals(u.getId())).count() > 0) {
             return false;
         }
 
-        if (plannedOrOngoing.stream().filter(n -> n.getRoom().getId().equals(room.getId())).count() > 0) {
+        if (plannedOrOngoing.stream().filter(n -> n.getRoom().getId().equals(r.getId())).count() > 0) {
             return false;
         }
 
-        if (plannedOrOngoing.stream().filter(n -> n.getTeam().getId().equals(team.getId())).count() > 0) {
+        if (plannedOrOngoing.stream().filter(n -> n.getTeam().getId().equals(t.getId())).count() > 0) {
             return false;
         }
 
