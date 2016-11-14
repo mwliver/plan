@@ -22,7 +22,7 @@ public class UserRepositoryTest extends Assert {
 
     @Test
     public void shouldAddUser() {
-        // When
+        // Given
         User user = new User();
         user.setName("foo");
         user.setLogin("foo");
