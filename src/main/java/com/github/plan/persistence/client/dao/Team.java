@@ -1,5 +1,6 @@
 package com.github.plan.persistence.client.dao;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ public class Team {
     @GeneratedValue
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
     public Long getId() {

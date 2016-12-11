@@ -24,8 +24,12 @@ public class TeamController {
 
     @RequestMapping(value = "/team/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveTeam(@RequestBody Team team) {
-        teamRepository.save(team);
-        return new ResponseEntity<String>(HttpStatus.CREATED);
+        if (teamRepository.countByName(team.getName()) == 0) {
+            teamRepository.save(team);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
+        }
     }
 
     @RequestMapping(value = "/team/remove", method = RequestMethod.POST)
