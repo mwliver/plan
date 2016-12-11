@@ -4,7 +4,6 @@ import com.github.plan.base.GenericTestConfiguration;
 import com.github.plan.persistence.client.dao.Event;
 import com.github.plan.persistence.client.dao.EventRepository;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {GenericTestConfiguration.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-@Ignore
 public class EventRepositoryTest extends Assert {
 
     @Autowired
