@@ -29,9 +29,9 @@ public class EventController {
                                            @RequestBody User user) {
         Boolean result = eventService.addEvent(event, team, room, user);
         if (Boolean.TRUE.equals(result)) {
-            return new ResponseEntity<String>(HttpStatus.OK);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
         } else {
-            return new ResponseEntity<String>("Zajęte", HttpStatus.OK);
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
         }
     }
 
