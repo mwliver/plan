@@ -25,7 +25,7 @@ public class UserController {
 
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveUser(@RequestBody User user) {
-        if (userRepository.countByName(user.getName()) == 0) {
+        if (userRepository.countByLogin(user.getLogin()) == 0) {
             userRepository.save(user);
             return new ResponseEntity<String>(HttpStatus.ACCEPTED);
         } else {
