@@ -1,9 +1,6 @@
 package com.github.plan.persistence.client.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
@@ -14,6 +11,8 @@ public class User {
     private Long id;
 
     private String login;
+
+    @Column(unique = true)
     private String name;
     private String password;
 

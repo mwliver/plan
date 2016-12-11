@@ -25,8 +25,12 @@ public class UserController {
 
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveUser(@RequestBody User user) {
-        userRepository.save(user);
-        return new ResponseEntity<String>(HttpStatus.CREATED);
+        if (userRepository.countByName(user.getName()) == 0) {
+            userRepository.save(user);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
+        }
     }
 
     @RequestMapping(value = "/user/remove", method = RequestMethod.POST)
