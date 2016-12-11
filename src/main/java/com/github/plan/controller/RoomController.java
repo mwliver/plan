@@ -24,8 +24,12 @@ public class RoomController {
 
     @RequestMapping(value = "/room/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveRoom(@RequestBody Room room) {
-        roomRepository.save(room);
-        return new ResponseEntity<String>(HttpStatus.CREATED);
+        if (roomRepository.countByBuildingAndNumber(room.getBuilding(), room.getNumber()) == 0) {
+            roomRepository.save(room);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
+        }
     }
 
     @RequestMapping(value = "/room/remove", method = RequestMethod.POST)
