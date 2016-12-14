@@ -3,16 +3,48 @@ package com.github.plan.controller;
 
 import com.github.plan.persistence.client.dao.*;
 import com.github.plan.service.EventService;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeConstants;
+import org.joda.time.IllegalFieldValueException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 public class EventController {
+
+    private class DateTimePair {
+        DateTime startOfWeek;
+        DateTime endOfWeek;
+
+        DateTimePair(int numberOfWeek, int year) {
+            startOfWeek = new DateTime()
+                    .withTimeAtStartOfDay()
+                    .withYear(year)
+                    .withWeekOfWeekyear(numberOfWeek)
+                    .withDayOfWeek(DateTimeConstants.MONDAY);
+            endOfWeek = new DateTime()
+                    .withTimeAtStartOfDay()
+                    .minusMillis(1)
+                    .withYear(year)
+                    .withWeekOfWeekyear(numberOfWeek)
+                    .withDayOfWeek(DateTimeConstants.SUNDAY);
+        }
+
+        public Calendar getStartOfWeek() {
+            return startOfWeek.toGregorianCalendar();
+        }
+
+        public Calendar getEndOfWeek() {
+            return endOfWeek.toGregorianCalendar();
+        }
+    }
 
     @Autowired
     EventService eventService;
@@ -33,28 +65,53 @@ public class EventController {
         }
     }
 
-    @RequestMapping(value = "/event/list", method = RequestMethod.GET)
-    public List<Event> getEvents() {
-        return eventRepository.findAll();
-    }
+    @RequestMapping(value = "/event/list/user/{userId}/{year}/{numberOfWeek}", method = RequestMethod.GET)
+    public List<Event> getEventsByUserId(@PathVariable("userId") Long userId,
+                                         @PathVariable("year") Integer year,
+                                         @PathVariable("numberOfWeek") Integer numberOfWeek) {
+        DateTimePair dtp;
 
-    @RequestMapping(value = "/event/list/user/{userId}", method = RequestMethod.GET)
-    public List<Event> getEventsByUserId(@PathVariable("userId") Long userId) {
-        List<Event> events = eventRepository.findAll();
+        try {
+            dtp = new DateTimePair(numberOfWeek, year);
+        } catch (IllegalFieldValueException illegalFieldValueException) {
+            return new ArrayList<>();
+        }
+
+        List<Event> events = eventRepository.findPlannedOrOngoing(dtp.getStartOfWeek(), dtp.getEndOfWeek());
 
         return events.stream().filter(n -> n.getUser().getId() == userId).collect(Collectors.toList());
     }
 
-    @RequestMapping(value = "/event/list/team/{teamId}", method = RequestMethod.GET)
-    public List<Event> getEventsByTeamId(@PathVariable("teamId") Long teamId) {
-        List<Event> events = eventRepository.findAll();
+    @RequestMapping(value = "/event/list/team/{teamId}/{year}/{numberOfWeek}", method = RequestMethod.GET)
+    public List<Event> getEventsByTeamId(@PathVariable("teamId") Long teamId,
+                                         @PathVariable("year") Integer year,
+                                         @PathVariable("numberOfWeek") Integer numberOfWeek) {
+        DateTimePair dtp;
+
+        try {
+            dtp = new DateTimePair(numberOfWeek, year);
+        } catch (IllegalFieldValueException illegalFieldValueException) {
+            return new ArrayList<>();
+        }
+
+        List<Event> events = eventRepository.findPlannedOrOngoing(dtp.getStartOfWeek(), dtp.getEndOfWeek());
 
         return events.stream().filter(n -> n.getTeam().getId() == teamId).collect(Collectors.toList());
     }
 
-    @RequestMapping(value = "/event/list/room/{roomId}", method = RequestMethod.GET)
-    public List<Event> getEventsByRoomId(@PathVariable("roomId") Long roomId) {
-        List<Event> events = eventRepository.findAll();
+    @RequestMapping(value = "/event/list/room/{roomId}/{year}/{numberOfWeek}", method = RequestMethod.GET)
+    public List<Event> getEventsByRoomId(@PathVariable("roomId") Long roomId,
+                                         @PathVariable("year") Integer year,
+                                         @PathVariable("numberOfWeek") Integer numberOfWeek) {
+        DateTimePair dtp;
+
+        try {
+            dtp = new DateTimePair(numberOfWeek, year);
+        } catch (IllegalFieldValueException illegalFieldValueException) {
+            return new ArrayList<>();
+        }
+
+        List<Event> events = eventRepository.findPlannedOrOngoing(dtp.getStartOfWeek(), dtp.getEndOfWeek());
 
         return events.stream().filter(n -> n.getRoom().getId() == roomId).collect(Collectors.toList());
     }
