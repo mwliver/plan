@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.11" icons="true" automaticImage="PNG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
+  <class id="1" language="java" name="com.github.plan.config.CustomUserDetailsService" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/CustomUserDetailsService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="237" x="508" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.github.plan.config.JdbcConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/JdbcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="344" x="124" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.github.plan.config.OAuth2ServerConfig.OAuth2Config" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="299" x="2172" y="439"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.github.plan.config.CustomUserDetailsService.UserRepositoryUserDetails" 
+    project="plan" file="/plan/src/main/java/com/github/plan/config/CustomUserDetailsService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="243" width="296" x="508" y="439"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.github.plan.config.MethodSecurityConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/MethodSecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="149" x="785" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.github.plan.config.WebAppInitializer" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/WebAppInitializer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="360" x="974" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.github.plan.config.SecurityConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/SecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="282" x="1374" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.github.plan.config.OAuth2ServerConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="140" x="2511" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.github.plan.config.MvcConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/MvcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="359" x="1696" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.github.plan.config.OAuth2ServerConfig.ResourceServer" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="274" x="2511" y="439"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.github.plan.config.PersistenceJpaConfig" project="plan" 
+    file="/plan/src/main/java/com/github/plan/config/PersistenceJpaConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="376" x="2095" y="228"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="12">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </nesting>  
+  <nesting id="13">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="14">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
