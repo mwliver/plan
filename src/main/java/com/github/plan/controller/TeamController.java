@@ -24,8 +24,23 @@ public class TeamController {
 
     @RequestMapping(value = "/team/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveTeam(@RequestBody Team team) {
-        if (teamRepository.countByName(team.getName()) == 0) {
+        if (teamRepository.countByName(team.getName()) == 0
+                || teamRepository.countByName(team.getName()) == 1
+                && teamRepository.findByName(team.getName()).getId() == team.getId()) {
             teamRepository.save(team);
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
+    @RequestMapping(value = "/team/list/save", method = RequestMethod.POST)
+    public ResponseEntity<String> saveTeams(@RequestBody List<Team> teams) {
+        if (teams.stream()
+                .allMatch(team -> teamRepository.countByName(team.getName()) == 0
+                        || teamRepository.countByName(team.getName()) == 1
+                        && teamRepository.findByName(team.getName()).getId() == team.getId())) {
+            teamRepository.save(teams);
             return new ResponseEntity<String>(HttpStatus.ACCEPTED);
         } else {
             return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
