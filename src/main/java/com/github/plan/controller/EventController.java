@@ -119,7 +119,13 @@ public class EventController {
     @RequestMapping(value = "/event/save", method = RequestMethod.POST)
     public ResponseEntity<String> saveEvent(@RequestBody Event event) {
         eventRepository.save(event);
-        return new ResponseEntity<String>(HttpStatus.CREATED);
+        return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(value = "/event/list/save", method = RequestMethod.POST)
+    public ResponseEntity<String> saveEvents(@RequestBody List<Event> events) {
+        eventRepository.save(events);
+        return new ResponseEntity<String>(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(value = "/event/remove", method = RequestMethod.POST)
