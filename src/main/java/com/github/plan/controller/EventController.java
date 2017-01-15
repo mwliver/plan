@@ -24,16 +24,11 @@ public class EventController {
         DateTime endOfWeek;
 
         DateTimePair(int numberOfWeek, int year) {
-            startOfWeek = new DateTime()
-                    .withTimeAtStartOfDay()
-                    .withYear(year)
-                    .withWeekOfWeekyear(numberOfWeek)
+            startOfWeek = new DateTime(year, 1, 1, 0, 0, 0, 0)
+                    .plusWeeks(numberOfWeek - 1)
                     .withDayOfWeek(DateTimeConstants.MONDAY);
-            endOfWeek = new DateTime()
-                    .withTimeAtStartOfDay()
-                    .minusMillis(1)
-                    .withYear(year)
-                    .withWeekOfWeekyear(numberOfWeek)
+            endOfWeek = new DateTime(year, 1, 1, 23, 59, 59, 999)
+                    .plusWeeks(numberOfWeek - 1)
                     .withDayOfWeek(DateTimeConstants.SUNDAY);
         }
 
