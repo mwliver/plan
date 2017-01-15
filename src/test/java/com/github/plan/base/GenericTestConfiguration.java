@@ -1,8 +1,10 @@
 package com.github.plan.base;
 
 import com.github.plan.config.PersistenceJpaConfig;
+import com.github.plan.controller.EventController;
 import com.github.plan.controller.LoginController;
 import com.github.plan.controller.RoomController;
+import com.github.plan.controller.TeamController;
 import com.github.plan.controller.UserController;
 import com.github.plan.persistence.client.dao.EventRepository;
 import com.github.plan.persistence.client.dao.RoomRepository;
@@ -88,6 +90,16 @@ public class GenericTestConfiguration {
     @Bean
     RoomController roomController() {
         return new RoomController();
+    }
+
+    @Bean
+    TeamController teamController() {
+        return new TeamController();
+    }
+
+    @Bean
+    EventController eventController() {
+        return new EventController();
     }
 
     @Bean
