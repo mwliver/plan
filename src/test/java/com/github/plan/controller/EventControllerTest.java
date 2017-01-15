@@ -64,10 +64,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -108,10 +108,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -150,10 +150,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -194,10 +194,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -236,10 +236,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -282,10 +282,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -326,9 +326,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
         timeTo.set(2017, 1, 1, 12, 0);
 
         Event event = new Event();
@@ -372,10 +373,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -416,10 +417,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
@@ -462,10 +463,10 @@ public class EventControllerTest extends Assert {
         user.setPassword("123");
 
         Calendar timeFrom = Calendar.getInstance();
-        timeFrom.set(2017, 1, 1, 10, 0);
+        timeFrom.set(2017, Calendar.JANUARY, 1, 10, 0);
 
         Calendar timeTo = Calendar.getInstance();
-        timeTo.set(2017, 1, 1, 12, 0);
+        timeTo.set(2017, Calendar.JANUARY, 1, 12, 0);
 
         Event event = new Event();
         event.setRoom(room);
