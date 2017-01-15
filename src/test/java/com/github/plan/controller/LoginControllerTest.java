@@ -67,4 +67,36 @@ public class LoginControllerTest extends Assert {
         // Then
         assertEquals(HttpStatus.ACCEPTED, response.getStatusCode());
     }
+
+    @Test
+    public void loginFailTestMock() throws Exception {
+        // Given
+        String username = "mw";
+        String pass = "pass";
+
+        // When
+        when(loginControllerMock.authenticate(username, pass)).thenReturn(new ResponseEntity<String>(HttpStatus.FORBIDDEN));
+        ResponseEntity<String> response = loginControllerMock.authenticate(username, pass);
+
+        // Then
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    public void loginFailTestImpl() throws Exception {
+        // Given
+        String username = "mw";
+        String pass = "pass";
+
+        User user = new User();
+        user.setLogin("niemw");
+        user.setPassword(pass);
+        userRepository.save(user);
+
+        // When
+        ResponseEntity<String> response = loginController.authenticate(username, pass);
+
+        // Then
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
 }
