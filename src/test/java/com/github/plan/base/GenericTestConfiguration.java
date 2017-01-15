@@ -1,6 +1,8 @@
 package com.github.plan.base;
 
 import com.github.plan.config.PersistenceJpaConfig;
+import com.github.plan.controller.RoomController;
+import com.github.plan.controller.UserController;
 import com.github.plan.persistence.client.dao.EventRepository;
 import com.github.plan.persistence.client.dao.RoomRepository;
 import com.github.plan.persistence.client.dao.TeamRepository;
@@ -30,7 +32,6 @@ public class GenericTestConfiguration {
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("com.github.plan.persistence.client.dao");
         factory.setJpaProperties(additionalProperties());
-//        factory.setDataSource(dataSource());
         factory.afterPropertiesSet();
 
         return factory;
@@ -52,16 +53,6 @@ public class GenericTestConfiguration {
 
         return properties;
     }
-
-//    @Bean
-//    public DataSource dataSource() {
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("org.postgresql.Driver");
-//        dataSource.setUrl("jdbc:postgresql://localhost/test");
-//        dataSource.setUsername("postgres");
-//        dataSource.setPassword("postgres");
-//        return dataSource;
-//    }
 
     @Bean
     UserRepository userRepository() {
@@ -86,5 +77,15 @@ public class GenericTestConfiguration {
     @Bean
     EventService eventService() {
         return new EventServiceImpl();
+    }
+
+    @Bean
+    UserController userController() {
+        return new UserController();
+    }
+
+    @Bean
+    RoomController roomController() {
+        return new RoomController();
     }
 }
