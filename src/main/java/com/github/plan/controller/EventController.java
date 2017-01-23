@@ -116,7 +116,7 @@ public class EventController {
     }
 
     @RequestMapping(value = "/event/remove", method = RequestMethod.POST)
-    public ResponseEntity<String> removeEvent(@RequestBody Long eventId) {
+    public ResponseEntity<String> removeEvent(@RequestParam Long eventId) {
         eventRepository.delete(eventId);
         return new ResponseEntity<String>(HttpStatus.OK);
     }
