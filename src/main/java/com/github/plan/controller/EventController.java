@@ -47,6 +47,19 @@ public class EventController {
     @Autowired
     EventRepository eventRepository;
 
+    @RequestMapping(value = "/event/add", method = RequestMethod.POST)
+    public ResponseEntity<String> addEvent(@RequestBody Event event,
+                                           @RequestBody Team team,
+                                           @RequestBody Room room,
+                                           @RequestBody User user) {
+        Boolean result = eventService.addEvent(event, team, room, user);
+        if (Boolean.TRUE.equals(result)) {
+            return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.NOT_ACCEPTABLE);
+        }
+    }
+
     @RequestMapping(value = "/event/list", method = RequestMethod.GET)
     public List<Event> getAllEvents() {
         return eventRepository.findAll();
