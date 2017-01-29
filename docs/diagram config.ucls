@@ -4,7 +4,7 @@
   router="FAN">  
   <class id="1" language="java" name="com.github.plan.config.CustomUserDetailsService" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/CustomUserDetailsService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="237" x="354" y="150"/>    
+    <position height="117" width="237" x="512" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </class>  
   <class id="2" language="java" name="com.github.plan.config.JdbcConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/JdbcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="344" x="-30" y="150"/>    
+    <position height="171" width="344" x="128" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   </class>  
   <class id="3" language="java" name="com.github.plan.config.OAuth2ServerConfig.OAuth2Config" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="299" x="2018" y="361"/>    
+    <position height="207" width="299" x="2176" y="365"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -32,7 +32,7 @@
   <class id="4" language="java" name="com.github.plan.config.CustomUserDetailsService.UserRepositoryUserDetails" 
     project="plan" file="/plan/src/main/java/com/github/plan/config/CustomUserDetailsService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="243" width="296" x="354" y="361"/>    
+    <position height="243" width="296" x="512" y="365"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -41,7 +41,7 @@
   </class>  
   <class id="5" language="java" name="com.github.plan.config.MethodSecurityConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/MethodSecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="149" x="631" y="150"/>    
+    <position height="81" width="149" x="789" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -50,7 +50,7 @@
   </class>  
   <class id="6" language="java" name="com.github.plan.config.WebAppInitializer" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/WebAppInitializer.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="360" x="820" y="150"/>    
+    <position height="171" width="360" x="978" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -59,7 +59,7 @@
   </class>  
   <class id="7" language="java" name="com.github.plan.config.SecurityConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/SecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="282" x="1220" y="150"/>    
+    <position height="135" width="282" x="1378" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -68,7 +68,7 @@
   </class>  
   <class id="8" language="java" name="com.github.plan.config.OAuth2ServerConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="140" x="2357" y="150"/>    
+    <position height="99" width="140" x="2515" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -77,7 +77,7 @@
   </class>  
   <class id="9" language="java" name="com.github.plan.config.MvcConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/MvcConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="359" x="1542" y="150"/>    
+    <position height="99" width="359" x="1700" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -86,7 +86,7 @@
   </class>  
   <class id="10" language="java" name="com.github.plan.config.OAuth2ServerConfig.ResourceServer" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/OAuth2ServerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="274" x="2357" y="361"/>    
+    <position height="135" width="274" x="2515" y="365"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -95,7 +95,7 @@
   </class>  
   <class id="11" language="java" name="com.github.plan.config.PersistenceJpaConfig" project="plan" 
     file="/plan/src/main/java/com/github/plan/config/PersistenceJpaConfig.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="376" x="1941" y="150"/>    
+    <position height="117" width="376" x="2099" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -103,16 +103,16 @@
     </display>  
   </class>  
   <nesting id="12">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="13">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="4"/>  
   </nesting>  
-  <nesting id="13">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="10"/>  
-  </nesting>  
   <nesting id="14">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="TARGET" refId="10"/>  
   </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
